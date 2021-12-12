@@ -1,53 +1,69 @@
 import {TestScheduler} from 'jest';
 import React, {useState} from 'react';
-import {View, Text, FlatList, Image, uri, TextInput, Pressable} from 'react-native';
-import Entypo from "react-native-vector-icons/Entypo";
-import { useNavigation } from '@react-navigation/native';
+import {
+  View,
+  Text,
+  FlatList,
+  Image,
+  uri,
+  TextInput,
+  Pressable,
+} from 'react-native';
+import Entypo from 'react-native-vector-icons/Entypo';
+import {useNavigation} from '@react-navigation/native';
 import styles from './styles.js';
 import searchResults from '../../../assets/data/search.js';
-import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
+import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
+import SuggestionRow from './SuggestionRow.js';
 
 const DestinationSearchScreen = props => {
   const [inputText, setInputText] = useState('');
   const navigation = useNavigation();
 
   return (
-    <View >
+    <View>
       {/*input component */}
-      <View style={{height:500}}>
-      <GooglePlacesAutocomplete
-      placeholder='Chercher une destination' 
-      onPress={(data=GooglePlaceData, details=GooglePlaceDetail =!null === null) => {
-        console.log(data, details);
-      }} 
-      query={{
-        key:'AIzaSyCQ4cO4EEK4ncQQarPIMqyjoKbAE_65QwI',
-        language:'en',
-      }}
-      
-      />
-   </View>
-      
-
-      <TextInput
+      <View style={{height: 500}}>
+        <GooglePlacesAutocomplete
+          placeholder="Chercher une destination"
+          onPress={(
+            data = GooglePlaceData,
+            details = (GooglePlaceDetail = !null === null),
+          ) => {
+            console.log(data, details);
+            navigation.navigate('Guests'); 
+          }}
+          fetchDetails
+          styles={{textInput: styles.textInput}}
+          query={{
+            key: 'AIzaSyCQ4cO4EEK4ncQQarPIMqyjoKbAE_65QwI',
+            language: 'en',
+            type: '(cities)', 
+          }}
+          suppressDefaultStyles
+           renderRow={(item = GooglePlaceData) => <SuggestionRow item ={item} />}
+        />
+      </View>
+     {/*  <TextInput
         style={styles.textInput}
-       placeholder="Quelle destination?"
+        placeholder="Quelle destination?"
         value={inputText}
         onChangeText={setInputText}
-      />
-
-      {/*Liste des destination */}
-      <FlatList
+      /> */}
+    { /* Liste des destination*/}
+     {/*  <FlatList
         data={searchResults}
         renderItem={({item}) => (
-          <Pressable onPress={() => navigation.navigate('Guests')} style={styles.row}>
-              <View style={styles.iconContainer}> 
-                  <Entypo name={"location-pin"} size={30}   />
- </View>
+          <Pressable
+            onPress={() => navigation.navigate('Guests')}
+            style={styles.row}>
+            <View style={styles.iconContainer}>
+              <Entypo name={'location-pin'} size={30} />
+            </View>
             <Text style={styles.locationText}>{item.description}</Text>
           </Pressable>
         )}
-      />
+      /> */}
     </View>
   );
 };

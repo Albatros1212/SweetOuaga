@@ -5,9 +5,11 @@ import {StyleSheet, Dimensions} from 'react-native';
 const styles = StyleSheet.create({
     container:{
         margin:20,
+        height:'100%',
+        padding:20,
     },
     textInput:{
-        marginTop:30,
+        marginTop:10,
         fontSize:20,
         marginBottom:20,
     },
