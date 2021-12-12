@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import {View, Text} from 'react-native';
 import {BackgroundImage} from 'react-native-elements/dist/config';
+import { FlatList } from 'react-native-gesture-handler';
 import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 import feed from '../../../assets/data/feed';
 import CustomMarker from '../../Components/CustomMarker';
+import PostCaroulselItem from '../../Components/PostCarouselItem/Index';
 
 const SearchResultsMap = props => {
   const[SelectedPlaceId, seSelectedPlaceId] = useState(null);
@@ -42,6 +44,16 @@ const SearchResultsMap = props => {
  */}
         
       </MapView>
+      <View style={{position:'absolute', bottom:40}}>
+     <FlatList 
+     data={feed} 
+     renderItem={({ item}) =>< PostCaroulselItem post={item}/>} 
+     horizontal />
+
+   
+
+      </View>
+
     </View>
   );
 };
