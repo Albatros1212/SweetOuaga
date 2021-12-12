@@ -9,7 +9,9 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Feather from 'react-native-vector-icons/Feather';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
-//import PostScreen from "../screens/PostScreen";
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import Connexion from '../../screens/Home/Connexion';
+
 
 const Tab = createBottomTabNavigator();
 
@@ -44,11 +46,11 @@ const HomeTabNavigator = props => {
         }}
       />
       <Tab.Screen
-        name={'Profile'}
-        component={HomeScreen}
+        name={'Connexion'}
+        component={Connexion}
         options={{
           tabBarIcon: ({color}) => (
-            <EvilIcons name="user" size={25} color={color} />
+            <AntDesign name="login" size={25} color={color} />
           ),
         }}
       />
