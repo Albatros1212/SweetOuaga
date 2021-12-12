@@ -12,21 +12,21 @@ const DestinationSearchScreen = props => {
   const navigation = useNavigation();
 
   return (
-    <View>
+    <View >
       {/*input component */}
-
+      <View style={{height:500}}>
       <GooglePlacesAutocomplete
       placeholder='Chercher une destination' 
       onPress={(data=GooglePlaceData, details=GooglePlaceDetail =!null === null) => {
         console.log(data, details);
       }} 
       query={{
-        key:'API KEY',
+        key:'AIzaSyCQ4cO4EEK4ncQQarPIMqyjoKbAE_65QwI',
         language:'en',
       }}
       
       />
-
+   </View>
       
 
       <TextInput
