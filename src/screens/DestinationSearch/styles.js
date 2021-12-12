@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         margin:20,
     },
     textInput:{
-        marginTop:50,
+        marginTop:30,
         fontSize:20,
         marginBottom:20,
     },
