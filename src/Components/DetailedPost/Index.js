@@ -1,19 +1,15 @@
 import {TestScheduler} from 'jest';
 import React from 'react';
-import {View, Text, ImageBackground, Pressable, Image, uri} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import {View, Text, ImageBackground, ScrollView, Image, uri} from 'react-native';
 
 import styles from './styles.js';
 
-const Post = (props) => {
+const DetailedPost = (props) => {
 
-const navigation = useNavigation();
-const goToPostPage = () =>{
-  navigation.navigate('Post', {postId: post.id});
-}
     const post = props.post;
   return (
-    <Pressable onPress={goToPostPage} style={styles.container}>
+    <ScrollView>
+    <View style={styles.container}>
       {/* Image */}
       <Image     source={{uri: post.image}}
         style={styles.image}
@@ -33,7 +29,10 @@ const goToPostPage = () =>{
       </Text>
       {/*Total Prix */}
       <Text style={styles.totalPrice}>${post.totalPrice}</Text>
-    </Pressable>
+      <Text style={{fontSize:20, fontWeight:'bold',}}> Description</Text>
+      <Text > {post.description}</Text>
+    </View>
+    </ScrollView>
   );
 };
-export default Post;
+export default DetailedPost;

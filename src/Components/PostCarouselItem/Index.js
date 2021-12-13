@@ -1,14 +1,22 @@
 import {TestScheduler} from 'jest';
 import React from 'react';
-import {View, Text, ImageBackground, Pressable, Image, uri, useWindowDimensions} from 'react-native';
-
+import {View, Text,  ImageBackground, Pressable, Image, uri, useWindowDimensions} from 'react-native';
+import { useNavigation,  } from '@react-navigation/native';
 import styles from './styles.js';
 
 const PostCaroulselItem = (props) => {
-const widht = useWindowDimensions().width;
+
+    const widht = useWindowDimensions().width;
     const post = props.post;
+    const navigation = useNavigation();
+    
+    const goToPostPage = () =>{
+      navigation.navigate('Post', {postId: post.id});
+    }
+
+
   return (
-    <View style={[styles.container,{widht: widht - 60 }] }>
+    <Pressable onPress={goToPostPage} style={[styles.container,{widht: widht - 60 }] }>
        <View style={styles.innerContainer}>
       {/* Image */}
       <Image     source={{uri: post.image}}
@@ -33,7 +41,7 @@ const widht = useWindowDimensions().width;
       <Text style={styles.totalPrice}>${post.totalPrice}</Text>
       </View>
       </View>
-    </View>
+    </Pressable>
   );
 };
 export default PostCaroulselItem;
