@@ -15,8 +15,9 @@ const widht = useWindowDimensions().width;
         style={styles.image}
     
       />
-      <View style={{marginHorizontal:10}}> 
+      <View style={{flex:1,marginHorizontal:10}}> 
  {/*Les chambre et Lits */}
+
  <Text style={styles.bedrooms}> {post.bed} Chambre {post.bedroom} lit Assini Mafia</Text>
       {/*Type et descriptions */}
       <Text style={styles.description} numberOfLines={2}>
