@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-sweetouaga-dev-75204-authRole",
+      "UnauthRoleArn": "arn:aws:iam::871376891669:role/amplify-sweetouaga-dev-75204-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::871376891669:role/amplify-sweetouaga-dev-75204-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-sweetouaga-dev-75204-deployment",
+      "UnauthRoleName": "amplify-sweetouaga-dev-75204-unauthRole",
+      "StackName": "amplify-sweetouaga-dev-75204",
+      "StackId": "arn:aws:cloudformation:us-east-1:871376891669:stack/amplify-sweetouaga-dev-75204/a59ec8d0-5cdc-11ec-ac55-12fb6e4d7bd1",
+      "AmplifyAppId": "d1ksxf8g5ib7ik"
+    },
+    "categories": {
+      "auth": {
+        "sweetouaga08812950": {}
+      }
+    }
+  }
+}

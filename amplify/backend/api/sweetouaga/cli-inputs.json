@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "sweetouaga",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "D:\\Azise-Projects\\SweetOuaga\\amplify\\backend\\api\\sweetouaga\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 365,
+      "apiKeyExpirationDate": "2022-12-14T14:10:23.871Z",
+      "keyDescription": ""
+    },
+    "conflictResolution": {},
+    "additionalAuthTypes": []
+  }
+}

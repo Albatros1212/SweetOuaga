@@ -19,7 +19,7 @@ const Router = props => {
     <NavigationContainer>
       <Stack.Navigator>
       <Stack.Screen name={"Home"} component={HomeTabNavigator} options={{headerShown: false}} /> 
-         <Stack.Screen name={"Destination Search"} component={DestinationSearchScreen} option={{title: "Chercher une destination"}} />
+        <Stack.Screen name={"Destination Search"} component={DestinationSearchScreen} option={{title: "Chercher une destination"}} />
         <Stack.Screen name={"Guests"} component={GuestScreen}  option={{title: "Combien de personnes?"}}/> 
         <Stack.Screen name={"Post"} component={PostScreen}  option={{title: "Detail"}}/> 
         
