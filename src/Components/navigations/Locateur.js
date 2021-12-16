@@ -15,7 +15,9 @@ import Feather from 'react-native-vector-icons/Feather';
 import {ThemeContext} from 'react-native-elements';
 import Chambre from './Chambre';
 import Acceuil from './Acceuil';
-import SignIn from './Signin';
+import Profil from './Profil';
+import Annonce from './Annonce';
+import Profit from './Profit';
 
 const Tab = createBottomTabNavigator();
 
@@ -54,11 +56,10 @@ const Locateur = () => {
           },
           headerTintColor: 'white',
         })}>
-        <Tab.Screen name="Chambre" component={Chambre}/>
         <Tab.Screen name="Notifications" component={ConfirmationReservation}/>
-        <Tab.Screen name="Annonce" component={Acceuil} />
-        <Tab.Screen name="Profit" component={GroceryScreen}/>
-        <Tab.Screen name="Profil" component={StatsScreen}/>
+        <Tab.Screen name="Annonce" component={Annonce} />
+        <Tab.Screen name="Profit" component={Profit}/>
+        <Tab.Screen name="Profil" component={Profil}/>
        
       </Tab.Navigator>
     </NavigationContainer>

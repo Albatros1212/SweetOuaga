@@ -12,7 +12,7 @@ import thunk from 'redux-thunk';
 import { TownsReducer } from './src/Reducers/TownReducer';
 
 import Amplify from 'aws-amplify';
-import config from './src/aws-exports';
+//import config from './src/aws-exports';
 
 Amplify.configure(config);
 
